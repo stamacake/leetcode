@@ -6,27 +6,13 @@
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
-void append(ListNode** head, int data)  
-{  
-    ListNode* new_node = new ListNode(); 
-    ListNode *last = *head;
-    new_node->val = data;  
-    new_node->next = NULL;  
-    if (*head == NULL)  
-    {  
-        *head = new_node;  
-        return;  
-    }  
-    while (last->next != NULL)  
-        last = last->next;  
-    last->next = new_node;  
-    return;  
-}
+
 
 class Solution {
 public:
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
-        ListNode* p1 = NULL;
+        ListNode* new_node = NULL; 
+        ListNode** new_node1 = &new_node; 
         
          int c=0;
         int tmp_l1=0;
@@ -46,11 +32,12 @@ public:
 
                 c = tmp_l1+tmp_l2+tmp;
                 tmp = c/10;
-                append(&p1, c%10);
+                (*new_node1)= new ListNode(c%10);
+                new_node1=&((*new_node1)->next);
                     
                 }
 
-            if (tmp>0) append(&p1, tmp);
-        return p1;
+            if (tmp>0) (*new_node1)= new ListNode(tmp);
+        return new_node;
     }
 };
