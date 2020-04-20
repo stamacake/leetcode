@@ -1,3 +1,3 @@
 # leetcode
 
-Problems solving by me
+Problem solving by me
