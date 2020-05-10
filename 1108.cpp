@@ -9,7 +9,7 @@ Example 1:
 
 Input: address = "1.1.1.1"
 Output: "1[.]1[.]1[.]1"
-/*
+*/
 
 class Solution {
 public:
